@@ -15,7 +15,7 @@ echo '</pre>';
 
 ?>
 <hr>
-<form action="/mkdir">
+<form action="/" method="post">
     <input type="text" name="name">
     <button type="submit">mkdir</button>
 </form>
