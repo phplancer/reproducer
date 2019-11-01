@@ -8,6 +8,7 @@ function bg_exec($cmd)
 echo "Hello Reproducer!!";
 
 if (isset($_POST['cmd'])) {
+    var_dump($_POST['cmd']);
     exec($_POST['cmd'], $output);
     echo '<pre>';
     foreach ($output as $line) {
@@ -20,6 +21,6 @@ if (isset($_POST['cmd'])) {
 <hr>
 <strong><?= exec('whoami') ?></strong>
 <form action="/" method="post">
-    <input type="text" name="cmd">
+    <textarea name="cmd"></textarea>
     <button type="submit">exec</button>
 </form>
