@@ -10,7 +10,11 @@ echo 'Hello Reproducer!!';
 
 if (isset($_POST['cmd'])) {
     $output = [];
-    array_unshift($_SESSION['last_cmds'], $trim = trim($_POST['cmd']));
+    $trim = trim($_POST['cmd']);
+
+    if ($trim !== $_SESSION['last_cmds'][0] ?? null) {
+        array_unshift($_SESSION['last_cmds'], $trim);
+    }
 
     if (isset($_POST['background'])) {
         $trim = 'nohup '.$trim.' > /dev/null 2>&1 & echo $!';
