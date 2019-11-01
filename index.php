@@ -38,6 +38,13 @@ if (isset($_POST['cmd'])) {
 </form>
 
 <br>
+<strong>Utils:</strong>
+<ul>
+    <li>
+        <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('composer create-project ').innerHTML">composer create-project</a>
+        <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('.apt/usr/lib/p7zip/7z ').innerHTML">7z</a>
+    </li>
+</ul>
 <strong>Last commands:</strong>
 <ul>
     <?php foreach ($_SESSION['last_cmds'] as $i => $cmd) { ?>
