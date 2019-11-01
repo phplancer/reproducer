@@ -11,6 +11,11 @@ echo 'Hello Reproducer!!';
 if (isset($_POST['cmd'])) {
     $output = [];
     array_unshift($_SESSION['last_cmds'], $trim = trim($_POST['cmd']));
+
+    if (isset($_POST['background'])) {
+        $trim = 'nohup '.$trim.' > /dev/null 2>&1 & echo $!';
+    }
+
     exec($trim, $output);
     echo '<pre>';
     foreach ($output as $line) {
@@ -23,8 +28,13 @@ if (isset($_POST['cmd'])) {
 <hr>
 <strong><?= exec('whoami') ?></strong>
 <form action="/" method="post">
-    <input id="cmd" name="cmd" />
-    <button type="submit">exec</button>
+    <div>
+        <input id="cmd" name="cmd" />
+        <button type="submit">exec</button>
+    </div>
+    <div>
+        <label><input type="checkbox" name="background"> Run in background</label>
+    </div>
 </form>
 
 <br>
