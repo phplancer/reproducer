@@ -1,11 +1,21 @@
 <?php
 
-//function bg_exec($cmd)
-//{
-//    exec($cmd.' > /dev/null &');
-//}
+function bg_exec($cmd)
+{
+    exec($cmd.' > /dev/null &');
+}
+
+var_dump($_POST);
 
 echo "Hello Reproducer!!";
 
 echo '<pre>';
-echo exec('ls vendor -al').PHP_EOL;
+echo exec('ls -al').PHP_EOL;
+echo '</pre>';
+
+?>
+<hr>
+<form action="/mkdir">
+    <input type="text" name="name">
+    <button type="submit">mkdir</button>
+</form>
