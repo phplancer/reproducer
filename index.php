@@ -8,8 +8,8 @@ function bg_exec($cmd)
 echo "Hello Reproducer!!";
 
 if (isset($_POST['cmd'])) {
-    var_dump($_POST['cmd']);
-    exec($_POST['cmd'], $output);
+    var_dump($commands = str_replace("\n", ' && ', $_POST['cmd']));
+    exec($commands, $output);
     echo '<pre>';
     foreach ($output as $line) {
         echo $line.PHP_EOL;
