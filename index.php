@@ -5,11 +5,12 @@ function bg_exec($cmd)
     exec($cmd.' > /dev/null &');
 }
 
-echo "Hello Reproducer!!";
+echo 'Hello Reproducer!!';
 
 if (isset($_POST['cmd'])) {
-    var_dump($commands = str_replace("\n", ' && ', $_POST['cmd']));
-    exec($commands, $output);
+    $commands = implode(' && ', explode("\n", $_POST['cmd']));
+    $output = [];
+    exec(trim($commands), $output);
     echo '<pre>';
     foreach ($output as $line) {
         echo $line.PHP_EOL;
