@@ -45,10 +45,10 @@ if (isset($_POST['cmd'])) {
 <strong>Utils:</strong>
 <ul>
     <li>
-        <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('composer create-project ').innerHTML">composer create-project</a>
+        <a href="#" onclick="document.getElementById('cmd').value = 'composer create-project '">composer create-project</a>
     </li>
     <li>
-        <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('.apt/usr/lib/p7zip/7z ').innerHTML">7z</a>
+        <a href="#" onclick="document.getElementById('cmd').value = '.apt/usr/lib/p7zip/7z '">7z</a>
     </li>
 </ul>
 <strong>Last commands:</strong>
