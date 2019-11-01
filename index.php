@@ -46,6 +46,8 @@ if (isset($_POST['cmd'])) {
 <ul>
     <li>
         <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('composer create-project ').innerHTML">composer create-project</a>
+    </li>
+    <li>
         <a href="#" onclick="document.getElementById('cmd').value = document.getElementById('.apt/usr/lib/p7zip/7z ').innerHTML">7z</a>
     </li>
 </ul>
