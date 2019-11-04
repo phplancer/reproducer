@@ -1,1 +1,4 @@
 p7zip-full
+docker-ce
+docker-ce-cli
+containerd.io
