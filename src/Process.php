@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Process
 {
     private $pid;
